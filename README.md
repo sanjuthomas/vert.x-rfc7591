@@ -166,4 +166,7 @@ sequenceDiagram
 
 ## Conclusion
 
-Implementing OAuth Dynamic Client Registration ([RFC 7591](https://openid.net/specs/openid-connect-registration-1_0.html#ClientRegistration)) in Vert.x is a strategic investment that supports the growing demand for automation, self-service, scalability, and interoperability in modern identity ecosystems. 
+Implementing OAuth Dynamic Client Registration ([RFC 7591](https://openid.net/specs/openid-connect-registration-1_0.html#ClientRegistration)) in Vert.x is a strategic investment that supports the growing demand for automation, self-service, scalability, and interoperability in modern identity ecosystems.
+
+## Citation
+This document was developed with the assistance of a generative AI tool (ChatGPT by OpenAI), which was used to help summarize and formalize the content and writing style.

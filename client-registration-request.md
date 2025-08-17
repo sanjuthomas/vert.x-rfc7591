@@ -1,11 +1,11 @@
-## Required attributes 
+## Required Request Attributes 
 
 | Attribute       | Description                               | When Required                                                                   |
 | --------------- | ----------------------------------------- | ------------------------------------------------------------------------------- |
 | `redirect_uris` | Array of redirection URIs for the client. | **Required** if the client uses `authorization_code` or `implicit` grant types. |
 
 
-## Attributes with Server Defaults (if not provided)
+## Optional Request Attributes with Server Defaults (if not provided)
 
 | Attribute          | Default Value                                                                                                                                                                                                                 | Description                                                      |
 | ------------------ | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------- |

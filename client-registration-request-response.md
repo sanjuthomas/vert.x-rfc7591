@@ -36,3 +36,55 @@
 | `client_uri`  | Home page of the client.                                       |
 | `policy_uri`  | Privacy policy URL.                                            |
 | `tos_uri`     | Terms of Service URL.                                          |
+
+### Cryptographic Keys
+
+| Attribute  | Description                                   |
+| ---------- | --------------------------------------------- |
+| `jwks_uri` | URL for the client’s JSON Web Key Set (JWKS). |
+| `jwks`     | Inline JWKS (instead of a `jwks_uri`).        |
+
+### Subject Identifier & Sector
+
+| Attribute               | Description                                                          |
+| ----------------------- | -------------------------------------------------------------------- |
+| `sector_identifier_uri` | URL pointing to a file with redirect URIs for pairwise subject type. |
+| `subject_type`          | `public` or `pairwise` subject identifiers.                          |
+
+
+### ID Token & UserInfo Settings
+
+| Attribute                         | Description                                    |
+| --------------------------------- | ---------------------------------------------- |
+| `id_token_signed_response_alg`    | JWS alg for signing ID tokens (e.g., `RS256`). |
+| `id_token_encrypted_response_alg` | JWE alg for encrypting ID tokens.              |
+| `id_token_encrypted_response_enc` | JWE content encryption alg for ID tokens.      |
+| `userinfo_signed_response_alg`    | JWS alg for signing UserInfo responses.        |
+| `userinfo_encrypted_response_alg` | JWE alg for encrypting UserInfo.               |
+| `userinfo_encrypted_response_enc` | JWE content encryption alg for UserInfo.       |
+
+### Request Object Settings
+
+| Attribute                       | Description                                     |
+| ------------------------------- | ----------------------------------------------- |
+| `request_object_signing_alg`    | JWS alg for signed request objects.             |
+| `request_object_encryption_alg` | JWE alg for encrypted request objects.          |
+| `request_object_encryption_enc` | JWE content encryption alg for request objects. |
+
+
+### Token Endpoint Authentication
+
+| Attribute                         | Description                                                                                                                                             |
+| --------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `token_endpoint_auth_method`      | Client authentication method at the token endpoint: <br>`client_secret_basic`, `client_secret_post`, `client_secret_jwt`, `private_key_jwt`, or `none`. |
+| `token_endpoint_auth_signing_alg` | JWS alg for signing JWTs when using `client_secret_jwt` or `private_key_jwt`.                                                                           |
+
+### Authentication & Login
+
+| Attribute            | Description                                                  |
+| -------------------- | ------------------------------------------------------------ |
+| `default_max_age`    | Default max authentication age (seconds).                    |
+| `require_auth_time`  | Boolean; whether `auth_time` claim is required in ID Tokens. |
+| `default_acr_values` | Array of default Authentication Context Class References.    |
+| `initiate_login_uri` | URL the OP can use to initiate login.                        |
+| `request_uris`       | Array of request URIs pre-registered for request objects.    |

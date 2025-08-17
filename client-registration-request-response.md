@@ -1,8 +1,15 @@
 ## Required Request Attributes 
 
-| Attribute       | Description                               | When Required                                                                   |
-| --------------- | ----------------------------------------- | ------------------------------------------------------------------------------- |
-| `redirect_uris` | Array of redirection URIs for the client. | **Required** if the client uses `authorization_code` or `implicit` grant types. |
+| Attribute                         | Auth Code + PKCE                                                                                        | Client Credentials                                         | What it’s for / tips                                            |
+| --------------------------------- | ------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------- | --------------------------------------------------------------- |
+| `redirect_uris`                   | **R**                                                                                                   | –                                                          | Required only for redirect-based flows (Auth Code).             |
+| `response_types`                  | **O** (defaults to `["code"]`)                                                                          | –                                                          | Server defaults to `code` for Auth Code flow.                   |
+| `grant_types`                     | **R** (`authorization_code` \[+ `refresh_token`])                                                       | **R** (`client_credentials`)                               | Explicitly declare the grants the client will use.              |
+| `token_endpoint_auth_method`      | **O** (e.g., `none` for public SPA/native, `client_secret_basic` or `private_key_jwt` for confidential) | **R** (choose an auth method, e.g., `client_secret_basic`) | How the client authenticates to the token endpoint.             |
+| `token_endpoint_auth_signing_alg` | **C**                                                                                                   | **C**                                                      | Required if using `private_key_jwt` or `client_secret_jwt`.     |
+| `jwks_uri` / `jwks`               | **C**                                                                                                   | **C**                                                      | Required if using `private_key_jwt`.                            |
+| `scope`                           | **O**                                                                                                   | **O**                                                      | Can declare default scopes at registration.                     |
+| `application_type`                | **O** (defaults to `"web"`)                                                                             | **O**                                                      | Use `native` for mobile/desktop apps, otherwise defaults apply. |
 
 
 ## Optional Request Attributes with Server Defaults (if not provided)

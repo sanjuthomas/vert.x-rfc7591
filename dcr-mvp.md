@@ -3,7 +3,7 @@
 ### Sample Request 
 ```
 {
-  "client_name": "My M2M Service",
+  "client_name": "vert.x_is_the_best",
   "grant_types": ["client_credentials"],
   "token_endpoint_auth_method": "client_secret_basic"
 }
